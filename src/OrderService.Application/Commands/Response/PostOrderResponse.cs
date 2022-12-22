@@ -12,6 +12,6 @@ namespace OrderService.Application.Commands.Response
         /// Orders
         /// </summary>
 
-        public Order Orders { get; set; }
+        public int OrderId { get; set; }
     }
 }

@@ -34,7 +34,6 @@
         public PostOrderRequest(int id, int productId, string description, DateTime? orderDate)
         {
             Id = id;
-            //Products = products;
             ProductId = productId;
             Description = description;
             OrderDate = orderDate;

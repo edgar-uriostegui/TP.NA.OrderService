@@ -5,7 +5,7 @@
         /// <summary>
         /// Id Order
         /// </summary>
-        public int Id { get; }
+        public int Id { get; set; }
         /// <summary>
         /// Id Product
         /// </summary>

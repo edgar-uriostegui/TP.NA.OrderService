@@ -20,7 +20,7 @@ namespace OrderService.Application.EndPoints
         
         public void AddRoutes(IEndpointRouteBuilder app)
         {
-            app.MapGet("/v1/orderService/GetAll", (IMediator mediator) =>
+            app.MapGet("/api/v1/orderService/GetAll", (IMediator mediator) =>
             {
                 return mediator.Send(new GetOrder.Query());
             })

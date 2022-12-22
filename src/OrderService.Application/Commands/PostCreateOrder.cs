@@ -89,16 +89,7 @@ namespace OrderService.Application.Commands
             {
                 try
                 {
-                    //List<ProductEntity> products = (List<ProductEntity>)request.Order.Products.Select(p => new ProductEntity { Id = p.Id, Name = p.Name, Price = p.Price, Quantity = p.Quantity });
-
-                    //_response.Payload.PostOrderResponse.Orders = _mapper.Map<OrderEntity, Order>(
-                    //    _repository.CreateOrder(request.Order.Description, (List<ProductEntity>)products, request.Order.OrderDate));
-
-                    _response.Payload.PostOrderResponse.Orders = _mapper.Map<OrderEntity, Order>(
-                        _repository.CreateOrder(request.Order.Description, request.Order.ProductId, request.Order.OrderDate));
-
-
-                    //_response.Payload.PostOrderResponse.Orders = _mapper.Map<List<OrderEntity>, List<Order>>(_repository.PostOrderId(request.Order.Id));
+                    _response.Payload.PostOrderResponse.OrderId = _repository.CreateOrder(request.Order.Description, request.Order.ProductId, request.Order.OrderDate);
                 }
                 catch (Exception ex)
                 {

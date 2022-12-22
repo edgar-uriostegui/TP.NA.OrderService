@@ -18,6 +18,6 @@ namespace OrderService.Repository.Repository.Persistance
         /// </summary>
         /// <returns></returns>
         //OrderEntity CreateOrder(string Description, List<ProductEntity> products, DateTime? orderDate);
-        OrderEntity CreateOrder(string Description, int productId, DateTime? orderDate);
+        int CreateOrder(string Description, int productId, DateTime? orderDate);
     }
 }
