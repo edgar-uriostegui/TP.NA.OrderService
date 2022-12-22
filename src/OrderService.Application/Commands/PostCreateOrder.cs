@@ -89,7 +89,7 @@ namespace OrderService.Application.Commands
             {
                 try
                 {
-                    _response.Payload.PostOrderResponse.OrderId = _repository.CreateOrder(request.Order.Description, request.Order.ProductId, request.Order.OrderDate);
+                    _response.Payload.PostOrderResponse.OrderId = _repository.CreateOrder(request.Order.Description, request.Order.Products, request.Order.OrderDate);
                 }
                 catch (Exception ex)
                 {
@@ -101,20 +101,6 @@ namespace OrderService.Application.Commands
                 return _response;
             }
         }
-        #endregion
-
-        #region Mapper
-        /// <summary>
-        /// Mapping profile for GetOrder
-        /// </summary>
-        public class Mapping : Profile
-        {
-            /// <summary>
-            /// Ctor that initialize all mappings for GetOrder
-            /// </summary>
-            public Mapping() => CreateMap<OrderEntity, Order>();
-        }
-
         #endregion
     }
 }

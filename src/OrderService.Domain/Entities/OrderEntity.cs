@@ -7,12 +7,11 @@ public class OrderEntity
     /// <summary>
     /// Id Order
     /// </summary>
-    public int Id { get; set; }
+    public int Id { get; private set; }
     /// <summary>
     /// Id Product
     /// </summary>
-    //public List<ProductEntity> Products { get; set; }
-    public int ProductId { get; private set; }
+    public List<ProductEntity> Products { get; set; }
     /// <summary>
     /// Description of order
     /// </summary>
@@ -27,14 +26,14 @@ public class OrderEntity
     /// </summary>
 
     /// <param name="id"></param>
-    /// <param name="productId"></param>
+    /// <param name="products"></param>
     /// <param name="description"></param>
     /// <param name="orderDate"></param>
 
-    public OrderEntity(int id, int productId, string description, DateTime? orderDate)
+    public OrderEntity(int id, List<ProductEntity> products, string description, DateTime? orderDate)
     {
         Id = id;
-        ProductId = productId;
+        Products = products;
         Description = description;
         OrderDate = orderDate;
     }

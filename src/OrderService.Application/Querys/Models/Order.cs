@@ -1,4 +1,6 @@
-﻿namespace OrderService.Application.Querys.Models
+﻿using OrderService.Domain.Models;
+
+namespace OrderService.Application.Querys.Models
 {
     /// <summary>
     /// Model for Order
@@ -12,7 +14,7 @@
         /// <summary>
         /// Id Product
         /// </summary>
-        public int ProductId { get; private set; }
+        public List<ProductEntity> Products { get; private set; }
         /// <summary>
         /// Description of order
         /// </summary>
@@ -27,14 +29,14 @@
         /// </summary>
 
         /// <param name="id"></param>
-        /// <param name="productId"></param>
+        /// <param name="products"></param>
         /// <param name="description"></param>
         /// <param name="orderDate"></param>
 
-        public Order(int id, int productId, string description, DateTime? orderDate)
+        public Order(int id, List<ProductEntity> products, string description, DateTime? orderDate)
         {
             Id = id;
-            ProductId = productId;
+            Products = products;
             Description = description;
             OrderDate = orderDate;
         }

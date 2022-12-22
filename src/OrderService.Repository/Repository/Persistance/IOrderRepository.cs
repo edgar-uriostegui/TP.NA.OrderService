@@ -17,7 +17,6 @@ namespace OrderService.Repository.Repository.Persistance
         /// Method that retrieve order id
         /// </summary>
         /// <returns></returns>
-        //OrderEntity CreateOrder(string Description, List<ProductEntity> products, DateTime? orderDate);
-        int CreateOrder(string Description, int productId, DateTime? orderDate);
+        int CreateOrder(string description, List<ProductEntity> products, DateTime? orderDate);
     }
 }

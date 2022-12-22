@@ -5,12 +5,11 @@
         /// <summary>
         /// Id Order
         /// </summary>
-        public int Id { get; set; }
+        public int Id { get; }
         /// <summary>
         /// Id Product
         /// </summary>
-        //public List<Product> Products { get; set; }
-        public int ProductId { get; }
+        public List<Product> Products { get; }
         /// <summary>
         /// Description of order
         /// </summary>
@@ -25,15 +24,14 @@
         /// </summary>
 
         /// <param name="id"></param>
-        /// <param name="productId"></param>
+        /// <param name="products"></param>
         /// <param name="description"></param>
         /// <param name="orderDate"></param>
 
-        public Order(int id, int productId, string description, DateTime? orderDate)
+        public Order(int id, List<Product> products, string description, DateTime? orderDate)
         {
             Id = id;
-            //Products = products;
-            ProductId = productId;
+            Products = products;
             Description = description;
             OrderDate = orderDate;
         }

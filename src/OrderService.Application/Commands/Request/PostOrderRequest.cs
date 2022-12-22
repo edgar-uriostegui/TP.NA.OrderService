@@ -1,4 +1,7 @@
-﻿namespace OrderService.Application.Commands.Request
+﻿using OrderService.Application.Commands.Models;
+using OrderService.Domain.Models;
+
+namespace OrderService.Application.Commands.Request
 {
     /// <summary>
     /// Request for Postorder
@@ -12,8 +15,7 @@
         /// <summary>
         /// Id Product
         /// </summary>
-        //public List<Product> Products { get; set; }
-        public int ProductId { get; }
+        public List<ProductEntity> Products { get; set; }
         /// <summary>
         /// Description of order
         /// </summary>
@@ -28,13 +30,13 @@
         /// </summary>
 
         /// <param name="id"></param>
-        /// <param name="productId"></param>
+        /// <param name="products"></param>
         /// <param name="description"></param>
         /// <param name="orderDate"></param>
-        public PostOrderRequest(int id, int productId, string description, DateTime? orderDate)
+        public PostOrderRequest(int id, List<ProductEntity> products, string description, DateTime? orderDate)
         {
             Id = id;
-            ProductId = productId;
+            Products = products;
             Description = description;
             OrderDate = orderDate;
         }
