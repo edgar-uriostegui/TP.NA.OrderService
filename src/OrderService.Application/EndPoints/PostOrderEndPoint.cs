@@ -1,14 +1,10 @@
 ﻿using Carter;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing;
 using OrderService.Application.Commands;
-using OrderService.Application.Commands.Models;
-
-using OrderService.Domain.Models;
-using OrderService.Repository.Repository.Core;
+using OrderService.Application.Commands.Request;
 
 namespace OrderService.Application.EndPoints
 {
@@ -24,7 +20,7 @@ namespace OrderService.Application.EndPoints
 
         public void AddRoutes(IEndpointRouteBuilder app)
         {
-            app.MapPost("/v1/orderService/create", ([FromBody] Order order, IMediator mediator) =>
+            app.MapPost("/api/v1/orderService/create", ([FromBody] PostOrderRequest order, IMediator mediator) =>
             {
                 return mediator.Send(new PostCreateOrder.Command(order));
             })

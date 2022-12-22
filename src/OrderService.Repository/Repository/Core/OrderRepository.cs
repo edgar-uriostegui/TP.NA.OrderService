@@ -23,12 +23,19 @@ namespace OrderService.Repository.Repository.Core
         /// Method that retrieves order id
         /// </summary>
         /// <returns></returns>
-        public OrderEntity CreateOrder(OrderEntity order)
-        {
-            order.Id = orders.OrderByDescending(u => u.Id).FirstOrDefault().Id + 1;
-            orders.Add(order);
+        //public OrderEntity CreateOrder(OrderEntity order)
+        //{
+        //    order.Id = orders.OrderByDescending(u => u.Id).FirstOrDefault().Id + 1;
+        //    orders.Add(order);
 
-            return order;
+        //    return order;
+        //}
+
+        public OrderEntity CreateOrder(string description, int productId, DateTime? orderDate)
+        {
+            int idOrder = orders.OrderByDescending(u => u.Id).FirstOrDefault().Id + 1;
+            orders.Add(new OrderEntity(idOrder, productId, description, orderDate));
+            return orders.Last();
         }
 
         public static List<OrderEntity> orders = new()

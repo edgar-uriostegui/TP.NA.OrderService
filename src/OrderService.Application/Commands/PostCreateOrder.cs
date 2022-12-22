@@ -6,6 +6,7 @@ using OrderService.Application.Utils;
 using OrderService.Domain.Models;
 using OrderService.Repository.Repository.Persistance;
 using System.Net;
+using OrderService.Application.Commands.Request;
 
 namespace OrderService.Application.Commands
 {
@@ -24,11 +25,11 @@ namespace OrderService.Application.Commands
             /// <summary>
             /// PostOrdertRequest field
             /// </summary>
-            public Order Order { get; set; }
+            public PostOrderRequest Order { get; }
             /// <summary>
             /// Constructor Comand
             /// </summary>
-            public Command(Order order)
+            public Command(PostOrderRequest order)
             {
                  Order = order;
             }
